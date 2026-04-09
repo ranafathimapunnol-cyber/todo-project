@@ -1,7 +1,12 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.http import HttpResponse
+
+
+def home(request):
+    return HttpResponse("Todo Backend is Running!")
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # ✅ REQUIRED
-    path('api/', include('todo.urls')),
+    path('', home),  # Add this line for the root path
+    path('admin/', admin.site.urls),
+    path('api/', include('todos.urls')),
 ]
