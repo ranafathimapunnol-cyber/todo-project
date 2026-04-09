@@ -24,12 +24,8 @@ SECRET_KEY = 'django-insecure-pg85i8t&veg5uezkq&oq!8zxgi%)zt9cg&06pn*zj(rj7j08x0
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "todo-project-seven-mu.vercel.app",
-]
+# settings.py
+ALLOWED_HOSTS = ['*']  # This is the "easy" fix to test if it works
 
 
 # Application definition
