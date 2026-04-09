@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-pg85i8t&veg5uezkq&oq!8zxgi%)zt9cg&06pn*zj(rj7j08x0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # settings.py
-ALLOWED_HOSTS = ['*']  # This is the "easy" fix to test if it works
-
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -125,3 +124,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 CORS_ALLOW_ALL_ORIGINS = True  # Allows React frontend to talk to Django.
+CORS_ALLOWED_ORIGINS = [
+    # Replace with your REAL frontend URL
+    "https://todo-project-frontend-yourname.vercel.app",
+    "http://localhost:5173",  # For local testing with Vite
+]
+
+# 2. Add the same URL here (without the 'http://' or 'https://' if needed, but usually full URL is fine)
+CSRF_TRUSTED_ORIGINS = [
+    "https://todo-project-frontend-yourname.vercel.app"
+]
